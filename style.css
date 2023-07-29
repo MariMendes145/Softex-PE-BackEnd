@@ -57,3 +57,34 @@ span {
   border: 3px solid black;
   cursor: pointer;
 }
+
+@media (min-width: 280px) and (max-width: 900px) {
+  body {
+    width: 80%;
+  }
+
+  .main {
+    width: 100%;
+    margin: 10px;
+    padding: 5px 10px;
+  }
+  h1 {
+    font-size: 40px;
+  }
+  span {
+    font-size: 70px;
+  }
+  .botoes {
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  #botao1 {
+    font-size: 25px;
+  }
+  #botao2 {
+    font-size: 25px;
+  }
+  #botao3 {
+    font-size: 25px;
+  }
+}
