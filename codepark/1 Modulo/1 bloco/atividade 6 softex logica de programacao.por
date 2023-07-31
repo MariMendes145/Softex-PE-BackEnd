@@ -1,56 +1,47 @@
-
-/* CLIQUE NO SINAL DE "+", À ESQUERDA, PARA EXIBIR A DESCRIÇÃO DO EXEMPLO
- *  
- * Copyright (C) 2014 - UNIVALI - Universidade do Vale do Itajaí
- * 
- * Este arquivo de código fonte é livre para utilização, cópia e/ou modificação
- * desde que este cabeçalho, contendo os direitos autorais e a descrição do programa, 
- * seja mantido.
- * 
- * Se tiver dificuldade em compreender este exemplo, acesse as vídeoaulas do Portugol 
- * Studio para auxiliá-lo:
- * 
- * https://www.youtube.com/watch?v=K02TnB3IGnQ&list=PLb9yvNDCid3jQAEbNoPHtPR0SWwmRSM-t
- * 
- * Descrição:
- * 
- * 	Este exemplo pede ao usuario que informe um número inteiro. Logo após, utiliza um
- * 	laço de repetição do tipo "para", para calcular e exibir a tabuada do número informado.
- * 	
- * Autores:
- * 
- * 	Giordana Maria da Costa Valle
- * 	Carlos Alexandre Krueger
- * 	
- * Data: 01/06/2013
- */
-
-programa 
+programa
 {
-	funcao inicio() 
-	{
-		inteiro numero, resultado, contador
-		
-		escreva("Informe um número para ver sua tabuada: ")
-		leia(numero)
+	
+	funcao inicio()
 
-		limpa()
+	{
+		cadeia ehTerrestre,usaCapacete,capacidadeVeicular,ehPesado, temPedal
 		
-		para (contador = 1; contador <= 10; contador++) 
-		{
-			resultado = numero * contador 
-			escreva (numero, " X ", contador, " = ", resultado , "\n")
+		escreva("É terrestre?(Sim/Nao): ")
+		leia(ehTerrestre)
+		se(ehTerrestre =="Sim"){
+			escreva("Usa capacete?(Sim/Nao)")
+			leia(usaCapacete)
+			se (usaCapacete == "Sim"){
+				escreva("Então, o transporte escolhido foi um moto!")	
+			}senao{
+				escreva("Cabe apenas 1 pessoa?(Sim/Nao):")
+				leia(capacidadeVeicular)
+				se(capacidadeVeicular == "Sim"){
+					escreva("É pesado?(Sim/Nao):")
+					leia(ehPesado)
+					se(ehPesado == "Sim"){
+					escreva("Então, o transporte escolhido foi um trator!")
+					}senao{
+					escreva("Tem pedal?(Sim/Nao):")
+					leia(temPedal)
+						se(temPedal =="Sim"){
+						escreva("Então, o transporte escolhido foi um bicicleta!")
+						}
+					}
+				}
+			}
 		}
 	}
 }
-
+					
+			
+			
 /* $$$ Portugol Studio $$$ 
  * 
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 1173; 
- * @DOBRAMENTO-CODIGO = [1];
+ * @POSICAO-CURSOR = 805; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
