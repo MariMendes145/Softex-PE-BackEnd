@@ -39,6 +39,7 @@ function calcularIdade() {
       }
     } catch (error) {
       console.log("mensagem:", error.message);
+      console.log("name", error.name);
     }
   }
 }
