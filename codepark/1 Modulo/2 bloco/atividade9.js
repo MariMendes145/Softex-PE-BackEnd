@@ -37,15 +37,11 @@ function verificarVotacao() {
     } else if (votacao == 515) {
       console.log("Voto computado! Voce votou no candidato Z!");
       resultadoCandZ = candidato_Z += 1;
-    } else if (
-      votacao !== 889 ||
-      votacao !== 847 ||
-      votacao !== 515 ||
-      votacao == 0
-    ) {
+    } else if (votacao !== 889) {
       console.log("Voto computado! Você votou nulo!");
       resultadoNulo = nulo += 1;
     }
+    while (votacao == isNaN) {}
     sair = String(read.question("Deseja encerrar a votacao? Digite(S/N)! "));
     if (sair == "S") {
       console.log("Encerrando o programa!");
@@ -79,6 +75,8 @@ function verificarVencedor() {
   } else if (candidato_Z > candidato_X && candidato_Z > candidato_Y) {
     console.log("O vencedor é o candidato Z com", candidato_Z, "votos.");
   } else {
-    console.log("Os votos computados são nulos, refaça a eleição!");
+    console.log(
+      "Os votos computados são nulos ou deu empate, refaça a eleição!"
+    );
   }
 }
