@@ -9,38 +9,76 @@ O código deve perguntar se deseja finalizar a votação depois do voto. Caso o 
 Quando a votação for finalizada, o código deverá mostrar o vencedor, aquele com o maior número de votos e, também, a quantidade de votos de cada candidato, os brancos e nulos. */
 
 const read = require("readline-sync");
-function EscolhaCandidato() {
+//Definindo variáveis de cada opção de voto e contador no inicio 0
+let candidato_X = 0;
+let candidato_Y = 0;
+let candidato_Z = 0;
+let nulo = 0;
+
+function verificarVotacao() {
+  const candidatos = {
+    CandidatoX: 889,
+    CandidatoY: 847,
+    CandidatoZ: 515,
+    Branco: 0,
+  };
+  console.log(candidatos); //mostrando numeros dos candidatos
+
   while (true) {
-    console.log(
-      "Escolha o candidato que deseja votar:\n 1-Candidato X = 889\n 2-candidato Y = 847\n 3-candidato Z = 515\n 4-Sair(Digite: 4)"
-    );
     let votacao = Number(
-      read.question("Informe o numero do candidado que deseja escolher: ")
+      read.question("Informe o numero do candidado que deseja votar: ")
     );
-    if (votacao === 889) {
+    if (votacao == 889) {
       console.log("Voto computado! Voce votou no candidato X!");
-      resultado_candidatoX = votacao;
-    } else if (votacao === 847) {
+      resultadoCandX = candidato_X += 1; // computa o voto
+    } else if (votacao == 847) {
       console.log("Voto computado! Voce votou no candidato Y!");
-      resultado_candidatoY = votacao;
-    } else if (votacao === 515) {
+      resultadoCandY = candidato_Y += 1;
+    } else if (votacao == 515) {
       console.log("Voto computado! Voce votou no candidato Z!");
-      resultado_candidatoZ = votacao;
-    } else if (votacao !== 889 || votacao !== 847 || votacao !== 515) {
+      resultadoCandZ = candidato_Z += 1;
+    } else if (
+      votacao !== 889 ||
+      votacao !== 847 ||
+      votacao !== 515 ||
+      votacao == 0
+    ) {
       console.log("Voto computado! Você votou nulo!");
-      try {
-        if (votacao == " ") {
-          throw new Error(
-            "Ação inválida! Informe um número de candidato ou se deseja sair do programa!"
-          );
-        }
-      } catch {
-        console.log("mensagem:", error.message);
-      }
-    } else if (votacao == 4) {
-      sair = read.question("Deseja encerrar a votação? Digite (4) : ");
+      resultadoNulo = nulo += 1;
+    }
+    sair = String(read.question("Deseja encerrar a votacao? Digite(S/N)! "));
+    if (sair == "S") {
+      console.log("Encerrando o programa!");
+      console.log(
+        "Resultado da eleição:\n" + "Candidato X: ",
+        candidato_X + " votos\n" + "Candidato Y: ",
+        candidato_Y +
+          " votos\n" +
+          "Candidato Z: " +
+          candidato_Z +
+          " votos\n" +
+          "Votos Nulos: " +
+          nulo +
+          " votos"
+      );
+      verificarVencedor();
+      break;
+    } else if (sair == "N") {
+      continue;
     }
   }
 }
+verificarVotacao();
 
-EscolhaCandidato();
+function verificarVencedor() {
+  // Verifica o vencedor
+  if (candidato_X > candidato_Y && candidato_X > candidato_Z) {
+    console.log("O vencedor é o candidatoX com", candidato_X, "votos.");
+  } else if (candidato_Y > candidato_X && candidato_Y > candidato_Z) {
+    console.log("O vencedor é o candidato Y com", candidato_Y, "votos.");
+  } else if (candidato_Z > candidato_X && candidato_Z > candidato_Y) {
+    console.log("O vencedor é o candidato Z com", candidato_Z, "votos.");
+  } else {
+    console.log("Os votos computados são nulos, refaça a eleição!");
+  }
+}
