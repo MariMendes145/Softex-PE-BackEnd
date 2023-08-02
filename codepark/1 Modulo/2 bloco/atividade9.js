@@ -41,7 +41,7 @@ function verificarVotacao() {
       console.log("Voto computado! Você votou nulo!");
       resultadoNulo = nulo += 1;
     }
-    while (votacao == isNaN) {}
+    while (votacao == true) {}
     sair = String(read.question("Deseja encerrar a votacao? Digite(S/N)! "));
     if (sair == "S") {
       console.log("Encerrando o programa!");
