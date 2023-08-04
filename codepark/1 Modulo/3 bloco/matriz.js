@@ -10,13 +10,15 @@ let animais = [
   ["sapo", "cururu", "anfíbio", 3],
 ];
 
-for (let animal = 0; animal < animais.length; animal++) {
-  for (
-    let informacoesAnimais = 0;
-    informacoesAnimais < animais[animal].length;
-    informacoesAnimais++
-  ) {
-    console.log(animais[animal][informacoesAnimais]);
+function verificarMatrix() {
+  for (let animal = 0; animal < animais.length; animal++) {
+    for (
+      let informacoesAnimais = 0;
+      informacoesAnimais < animais[animal].length;
+      informacoesAnimais++
+    ) {
+      console.log(animais[animal][informacoesAnimais]);
+    }
   }
-  console.log(" ");
 }
+verificarMatrix();
