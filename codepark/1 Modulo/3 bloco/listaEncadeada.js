@@ -10,7 +10,7 @@ class infoPessoa {
 // Criando os objetos
 const infoPessoa1 = new infoPessoa("Marcos", 35, "Marcilio");
 const infoPessoa2 = new infoPessoa("Maria", 32, "Marcilio");
-const infoPessoa3 = new infoPessoa("Marcilio", 5, "Joaquim");
+const infoPessoa3 = new infoPessoa("Marcilio", 5);
 
 // Definindo as relações de parentesco
 infoPessoa1.filho = infoPessoa3;
